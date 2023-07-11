@@ -45,7 +45,7 @@
                 </button>
                 <br><br>
                 <div class="table-responsive">
-                    <table id="datatable1" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"
+                    <table id="datatable" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"
                         style="text-align: center">
                         <thead>
                             <tr>
@@ -57,10 +57,10 @@
                         </thead>
                         <tbody>
 
+                            <?php $i=0; ?>
+                             @foreach ($grades as $grade )
+                             <?php $i++ ;?>
                             <tr>
-                               <?php $i=0; ?>
-                                @foreach ($grades as $grade )
-                                <?php $i++ ;?>
                                     
                                 
 
@@ -73,8 +73,8 @@
                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                         data-target="#delete" title="delete"><i class="fa fa-trash"></i></button>
                                 </td>
-                                @endforeach
                             </tr>
+                            @endforeach
                 </div>
             </div>
         </div>
@@ -97,8 +97,7 @@
                 </div>
                 <div class="modal-body">
                     <!-- add_form -->
-                    <form action="" method="post">
-                        {{ method_field('patch') }}
+                    <form action="{{ route('Grades.store') }}" method="post">                       
                         @csrf
                         <div class="row">
                             <div class="col">
@@ -110,7 +109,7 @@
                                     value=""
                                     required>
                                 <input id="id" type="hidden" name="id" class="form-control"
-                                    value="">
+                                    value="" required>
                             </div>
                             <div class="col">
                                 <label for="Name_en"

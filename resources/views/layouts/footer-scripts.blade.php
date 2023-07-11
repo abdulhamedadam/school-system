@@ -27,9 +27,6 @@
 <!-- custom -->
 <script src="{{ URL::asset('assets/js/custom.js') }}"></script>
 
-<script src="{{ URL::asset('assets/js/bootstrap-datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('assets/js/bootstrap-datatables/dataTables.bootstrap4.min.js') }}"></script>
-
 
 <script>
     $(document).ready(function() {
@@ -178,10 +175,4 @@
         });
     });
 </script>
-
-
-
-
-
-
 

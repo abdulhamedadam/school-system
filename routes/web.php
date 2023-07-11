@@ -60,7 +60,7 @@ function()
     // });
     Route::controller(GradeController::class)->group(function () {
         Route::get('/Grades', 'index')->name('Grades.index');
-        Route::post('/orders', 'store');
+        Route::POST('/Grades/store', 'store')->name('Grades.store');
     });
 
 
